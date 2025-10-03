@@ -1,0 +1,29 @@
+{
+  "name": "express_api_microservice",
+  "version": "1.0.0",
+  "description": "Trial Express API containing all microservices like redis , sentry , jwt , docker  etc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/i-ganza007/Express_API_Microservice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/i-ganza007/Express_API_Microservice/issues"
+  },
+  "homepage": "https://github.com/i-ganza007/Express_API_Microservice#readme",
+  "dependencies": {
+    "-": "^0.0.1",
+    "@prisma/client": "^6.16.3",
+    "express": "^5.1.0",
+    "joi": "^18.0.1",
+    "mongoose": "^8.18.3",
+    "nodemon": "^3.1.10",
+    "prisma": "^6.16.3",
+    "save-dev": "^0.0.1-security"
+  }
+}
