@@ -19,6 +19,8 @@
   "dependencies": {
     "-": "^0.0.1",
     "@prisma/client": "^6.16.3",
+    "axios": "^1.12.2",
+    "bcrypt": "^6.0.0",
     "express": "^5.1.0",
     "joi": "^18.0.1",
     "mongoose": "^8.18.3",

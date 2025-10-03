@@ -8,7 +8,7 @@ dotenv.config()
 
 const app = express()
 const server = http.createServer(app)
-mongoose.connect(process.env.URL_STRING,{useNewUrlParser:true})
+// mongoose.connect(process.env.URL_STRING,{useNewUrlParser:true})
 
 
 
