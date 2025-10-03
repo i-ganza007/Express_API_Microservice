@@ -1,11 +1,12 @@
 const dotenv = require('dotenv')
 dotenv.config()
+const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const router = require('express').Router()
 // Use the generated Prisma client output (schema.prisma has `output = "../generated/prisma"`)
 const { PrismaClient } = require('../generated/prisma')
 const prisma = new PrismaClient()
-const {User,Board,Task,SubTask} = require('../models/schema')
+const {User,Board,Task,SubTask,UserLogin} = require('../models/schema')
 
 router.get('/start',(req,res)=>{
     res.send('Router Setup')
@@ -37,5 +38,28 @@ router.post('/create/users',async (req,res)=>{
 //     try { await prisma.$disconnect() } catch (e) { /* ignore */ }
 //     process.exit(0)
 // })
+// TODO Finishing unhashing pass and setting up JWT 
+router.post('login/users',async (req,res)=>{
+    const {error,value} = UserLogin.validate(req.body)
+    if(error){
+        return res.status(400).json({"Error":error})
+    }
+    try {
+        const unhashed_pass = await bcrypt.compare
+        const data = await prisma.user.findFirst({
+            where:{
+                email:req.body.email,
+
+            }
+        })
+    } catch (error) {
+        
+    }
+})
+// TODO Fix to get the logged in user 
+router.get('/logged-in',(req,res)=>{})
+
+// TODO Fetching all user and using redis to cache these users 
+
 
 module.exports = {router}

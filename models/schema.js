@@ -8,6 +8,11 @@ const User = Joi.object({
     phoneNumber : Joi.string().min(5).required()
 })
 
+const UserLogin = Joi.object({
+    password:Joi.string().min(5).max(15).required(),
+    email:Joi.string().email().required(),
+})
+
 const Board = Joi.object({
     name:Joi.string().required(),
     description:Joi.string().required(),
@@ -27,4 +32,4 @@ const SubTask = Joi.object({
     taskId: Joi.string().uuid().required()
 })
 
-module.exports = {User,Board,Task,SubTask}
+module.exports = {User,Board,Task,SubTask,UserLogin}
